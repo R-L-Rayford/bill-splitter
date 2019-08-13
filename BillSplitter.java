@@ -11,6 +11,7 @@ public class BillSplitter {
     
     JFrame personAmount = new JFrame();
     JFrame total = new JFrame();
+    JFrame tip = new JFrame();
 
     // create scanner for user input
     Scanner input = new Scanner(System.in);
@@ -31,20 +32,41 @@ public class BillSplitter {
     //billTotal = input.nextFloat();
     
     String s2 = JOptionPane.showInputDialog(total,"What is the total of the bill?");
-    int ii = Integer.parseInt(s2);
+    float ii = Float.parseFloat(s2);
     billTotal = ii;
     
     // test scanner
-    System.out.println("Bill total is: "+billTotal);
+    System.out.println("Bill total is: "+ii);
     
     // get amount user want to tip
     //System.out.println("How much would you like to tip?");
     //tipPercentage = input.nextFloat();
     
-   new TipOptionPaneClass();
+    
+    Object[] options = {"10%","15%","20%"};
+    
+    int x = JOptionPane.showOptionDialog(tip,
+				 "How much would you like to tip?",
+				 "Tip Amount",
+				 JOptionPane.YES_NO_CANCEL_OPTION,
+				 JOptionPane.QUESTION_MESSAGE,
+				 null,
+				 options,
+				 options[2]);
+    
+    
+    if(x == 0) {
+    	tipPercentage = (float) (billTotal * .10);
+    }else if(x == 1) {
+    	tipPercentage = (float) (billTotal * .15);
+    }else {
+    	tipPercentage = (float) (billTotal * .20);
+    }
+    
+    System.out.println("The tip amount is "+tipPercentage);
     
     // add tip amount to total
-    totalAfterTip = billTotal + tipPercentage;
+    //totalAfterTip = billTotal + tipPercentage;
     
     System.out.format("The total after tip is: $%.2f%n", totalAfterTip);
     
