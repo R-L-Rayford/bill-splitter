@@ -11,28 +11,29 @@ public class BillSplitter {
     numOfPeopleInParty = InputWindows.partySize(numOfPeopleInParty);
 
     // test Scanner
-    System.out.println("Party size is: "+numOfPeopleInParty);
+    //System.out.println("Party size is: "+numOfPeopleInParty);
     
     // get the bill total
     billTotal = InputWindows.billTotal(billTotal);
     
     // test scanner
-    System.out.println("Bill total is: "+billTotal);
+    //System.out.println("Bill total is: "+billTotal);
     
     // get the tip amount
     tipPercentage = TipOptionPaneClass.addTip(tipPercentage, billTotal);
     
-    System.out.format("The amount for the tip is $%.2f%n",tipPercentage);
+    //System.out.format("The amount for the tip is $%.2f%n",tipPercentage);
     
     // add tip amount to total
     totalAfterTip = billTotal + tipPercentage;
     
-    System.out.format("The total after tip is: $%.2f%n",totalAfterTip);
+    //System.out.format("The total after tip is: $%.2f%n",totalAfterTip);
     
     amountEachOwes = totalAfterTip / numOfPeopleInParty;
     
-    System.out.format("This is the amount each person owes: $%.2f%n",amountEachOwes);
+    //System.out.format("This is the amount each person owes: $%.2f%n",amountEachOwes);
     
     // call method to display all information
+    InputWindows.display(numOfPeopleInParty,billTotal,tipPercentage,totalAfterTip,amountEachOwes);
   }
 }

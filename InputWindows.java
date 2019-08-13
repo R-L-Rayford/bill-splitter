@@ -1,9 +1,9 @@
-import java.awt.event.WindowListener;
 import javax.swing.*;
 
 public class InputWindows extends BillSplitter {
 	static JFrame personAmount = new JFrame();
     static JFrame total = new JFrame();
+    static JFrame display = new JFrame();
     
     InputWindows() {
 	    personAmount.setSize(300,300);
@@ -31,6 +31,14 @@ public class InputWindows extends BillSplitter {
         float ii = Float.parseFloat(s2);
         
         return billTotal = ii;
+    }
+    
+    public static void display(int numOfPeopleInParty, float billTotal, float tipPercentage, float totalAfterTip, float amountEachOwes) {
+    	JOptionPane.showMessageDialog(display,"Party size is: "+numOfPeopleInParty+
+    										"Bill total is: "+billTotal+
+    										"The amount for the tip is "+tipPercentage+
+    										"The total after tip is: "+totalAfterTip+
+    										"This is the amount each person owes: "+amountEachOwes);
     }
 
 }
