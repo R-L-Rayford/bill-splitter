@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class BillSplitter {
-  public static void main(Strings[] arg){
+  public static void main(String[] arg){
     int numOfPeopleInParty = 0;   // holds party size
     float billTotal = 0.0f;   // holds the total of the bill
     float tipPercentage = 0.0f;   // holds amount for tip
