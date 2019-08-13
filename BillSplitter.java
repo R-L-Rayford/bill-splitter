@@ -32,10 +32,10 @@ public class BillSplitter {
     // add tip amount to total
     totalAfterTip = billTotal + tipPercentage;
     
-    System.out.println("The total after tip is: "+totalAfterTip);
+    System.out.format("The total after tip is: $%.2f%n", totalAfterTip);
     
     amountEachOwes = totalAfterTip / numOfPeopleInParty;
     
-    System.out.println("This is the amount each person owes: "+amountEachOwes);
+    System.out.format("This is the amount each person owes:  $%.2f%n", amountEachOwes);
   }
 }
