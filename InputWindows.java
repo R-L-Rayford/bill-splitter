@@ -31,14 +31,18 @@ public class InputWindows extends BillSplitter {
         float ii = Float.parseFloat(s2);
         
         return billTotal = ii;
-    }
+    } 
     
     public static void display(int numOfPeopleInParty, float billTotal, float tipPercentage, float totalAfterTip, float amountEachOwes) {
-    	JOptionPane.showMessageDialog(display,"Party size is: "+numOfPeopleInParty+
-    										"Bill total is: "+billTotal+
-    										"The amount for the tip is "+tipPercentage+
-    										"The total after tip is: "+totalAfterTip+
-    										"This is the amount each person owes: "+amountEachOwes);
+    	
+    	
+    	String[] formattedStrings = {String.format("Bill total is: $%.2f",billTotal),
+    								String.format("The amount for the tip is $%.2f",tipPercentage),
+    								String.format("The total after tip is: $%.2f",totalAfterTip),
+    								String.format("This is the amount each person owes: $%.2f",amountEachOwes)};
+    	
+    	JOptionPane.showMessageDialog(display,"<html>Party size is: "+numOfPeopleInParty+"<br>"+
+    			formattedStrings[0]+"<br>"+formattedStrings[1]+"<br>"+formattedStrings[2]+"<br>"+formattedStrings[3]+"</html>");
     }
 
 }
